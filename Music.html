@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+  </head>
+  <body class="vh-auto d-flex align-items-center">
+    <div class="container pb-5 mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-lg-4">
+          <div class="card p-3">
+            <div class="card-body text-light">
+              <div class="d-flex flex-column align-items-center">
+                <img src="https://i.pinimg.com/564x/87/99/59/879959c9e18729568156805fbb6c912b.jpg" class="card-img-top mb-3 rounded-4" alt="Song Image">
+                <h3 class="song-title">Song Name</h3>
+                <p class="song-artist fs-5">Artist Name</p>
+              </div>
+              <div class="mt-2 d-flex justify-content-between px-1 py-2">
+                <span class="current-time">5:00</span>
+                <span class="total-time">10:13</span>
+              </div>
+              <div class="progress">
+                <div class="circle"></div>
+                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <div class="mt-2 d-flex justify-content-evenly mt-4">
+                <button class="btn text-light fs-1 rounded-circle px-3" id="prev-button"><i class="bi bi-skip-start-fill"></i></i></button>
+                <button class="btn green  rounded-circle" id="play-pause-button"><i class="bi bi-play-fill" id="play"></i></button>
+                <button class="btn text-light fs-1 rounded-circle px-3" id="next-button"><i class="bi bi-skip-end-fill"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-lg-8 text-light ps-5">
+          <h1>Explore</h1>
+          <ul class="nav nav-underline mt-4 pb-5">
+              <li class="nav-item">
+                  <a class="nav-link active text-light fs-5 me-5" href="#" onclick="showTab('lyrics')">Lyrics</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light fs-5 me-5" href="#" onclick="showTab('other-albums')">Other Albums</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light fs-5 me-5" href="#" onclick="showTab('related-artists')">Related Artists</a>
+              </li>
+          </ul>
+  
+          <div class="tab-content explore">
+            <!-- Lyrics -->
+            <div id="lyrics" class="tab-pane fade show active">
+              <h5 id="lyrics-paragraph">This is where the lyrics content goes.</h5>
+            </div>
+
+            <!-- Other Albums -->
+            <div id="other-albums" class="tab-pane fade">
+              <div id="albums-carousel" class="splide">
+                <div class="splide__track">
+                  <ul class="splide__list" id="album-carousel-list">
+                    <!-- Artist slides will be dynamically added here -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Realted Artist -->
+            <div id="related-artists" class="tab-pane fade">
+              <div id="related-carousel" class="splide">
+                <div class="splide__track">
+                  <ul class="splide__list" id="carousel-list">
+                    <!-- Artist slides will be dynamically added here -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    </div>
+    
+    <!-- JS Bootstrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Splide.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
